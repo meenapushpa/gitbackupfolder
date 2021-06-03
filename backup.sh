@@ -12,7 +12,7 @@ then
   mkdir "backup_$now"/
   for i in "${fileslist[@]}"
   do
-    cp ~/"$i"  "backup_$now"/
+    cp "$i"  "backup_$now"/
     #cp $untrackf  backup_$now/
 done
 fi
