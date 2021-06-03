@@ -8,11 +8,14 @@ declare -a fileslist
 fileslist=$(git ls-files --modified)
 if [[ $fileslist  || $untrackf ]]
 then
-  cd c:
-  mkdir "backup_$now"/
+  #cd c:
+  foldername="backup_$now"
+  echo "the foldername is: $foldername"
+  mkdir $foldername
   for i in "${fileslist[@]}"
   do
-    cp "$i"  "backup_$now"/
-    #cp $untrackf  backup_$now/
+    pwd
+    cp $i  $foldername/
+    cp $untrackf  $foldername/
 done
 fi
